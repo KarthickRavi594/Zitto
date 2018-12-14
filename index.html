@@ -1,0 +1,128 @@
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons1" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+	<title>
+		Zitto - Dashboard
+	</title>
+</head>
+
+<body ng-app="BlankApp" ng-cloak>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <div class="container" ng-controller="DemoCtrl">
+        <div layout class="header">
+            <span flex="15">
+                <img src="zitto.png" width="110px" height="55px" />
+            </span>
+            <div flex="70" class="text1">
+                <h4>DASHBOARD</h4>
+            </div>
+            <div flex="5" class="user1 center">
+                <img src="user.jpg" height="30px" width="30px">
+            </div>
+            <div flex class="text2 center">
+                <h4>Karthick</h4>
+            </div>
+        </div>
+        <div layout class="detail">
+            <div flex="60" class="userData">
+                <div layout class="heading">
+                    <div flex="80">
+                        <span class="titleHeading">User Statistics</span>
+                    </div>
+                </div>
+                <div layout class="data">
+                    <div flex="30" class="generate">
+                        <p class="prodName">Department Name</p>
+                        <p>Sales</p>
+                    </div>
+                    <div flex="30" class="generate">
+                        <p class="prodName">Users</p>
+                        <p>2500</p>
+                    </div>
+                    <div flex="30" class="generate">
+                        <p class="prodName">Active Users</p>
+                        <p>255</p>
+                    </div>
+                </div>
+            </div>
+            <div flex class="userData">
+                <img src="chart.jpg" height="180px" width="100%">
+            </div>
+        </div>
+		<div class="userdetaildesktop">
+        <div class="content_heading">
+            <div layout>
+                <div flex="5">
+
+                </div>
+                <div flex="20" class="titleHeading">
+                    Account Name
+                </div>
+                <div flex="20" class="titleHeading">
+                    Email
+                </div>
+                <div flex="20" class="titleHeading">
+                    Department
+                </div>
+                <div flex="20" class="titleHeading">
+                    lastLogin
+                </div>
+            </div>
+        </div>
+        <div class="value" ng-repeat="users in UserDetails">
+            <div layout>
+                <div flex="10" class="detailName">
+                    {{users.name}}
+                </div>
+                <div flex="20" class="detailName">
+                    {{users.email}}
+                </div>
+                <div flex="10" class="detailName">
+                    {{users.department}}
+                </div>
+                <div flex="10" class="detailName">
+                    {{users.lastlogin}}
+                </div>
+                <div flex class="detailName">
+                    <button ng-if="users.CurrentSubscription=='Annual'" onclick="subscriptions('Monthly',users.name)">Plan Monthly</button>
+					<button ng-if="users.CurrentSubscription=='Monthly'" onclick="subscriptions('Annual',users.name)">Plan Annual</button>
+                </div>
+            </div>
+        </div>
+		</div>
+        <div layout class="hideNo value" ng-repeat = "userdata in  UserDetails">
+            <div flex="65" class="topicHeading">
+                <ul>
+                    <li class="titleHeading">Account Name</li>
+                    <li class="titleHeading">Email</li>
+                    <li class="titleHeading">Department</li>
+                    <li class="titleHeading">lastLogin</li>
+                  </ul>
+            </div>
+            <div flex="25" class="partners">
+                <ul>
+                    <li>{{userdata.name}}</li>
+                    <li>{{userdata.email}}</li>
+                    <li>{{userdata.department}}</li>
+                    <li>{{userdata.lastlogin}}</li>
+                    <li><button ng-if="userdata.CurrentSubscription=='Annual'" onclick="subscriptions('Monthly',userdata.name)">Plan Monthly</button></li>
+                    <li><button ng-if="userdata.CurrentSubscription=='Monthly'" onclick="subscriptions('Annual',userdata.name)">Plan Annual</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

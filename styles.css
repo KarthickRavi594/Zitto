@@ -1,0 +1,116 @@
+.header{
+    background-color:#55aaff;
+    width: 100%;
+    height: 65px;
+}
+.user1 img{
+    border-radius: 50%; 
+}
+.center{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container{
+    margin:2%;
+}
+.prodName{
+    margin: 3px;
+}
+.userData{
+    border: 1px solid black;
+    margin: 10px 10px;
+}
+.content_heading li{
+    display: inline-block;
+    color: black;
+    margin: 2px 55px;
+    font-size: 15px;
+  }
+.select2{
+    background-color: rgb(244, 247, 248);
+    border: 0px;
+}
+.heading{
+    margin:10px;
+    margin-bottom: 20px;
+}
+.data{
+    margin: 5%;
+}
+.generate{
+    margin: 15px;
+}
+.tkw{
+    margin: 15px;
+}
+.pv{
+    margin: 15px;
+}
+.detail{
+    margin: 10px;
+}
+.value {
+    background-color: white;
+    margin-left: 30px;
+    margin-right: 20px;
+  }
+  .value div{
+    background-color: white;
+    color: black;
+    margin: 10px 30px;
+    font-size: 14px;
+  }
+  .value ul{
+    padding-left: 12px;
+  }
+  .hideNo{
+      display: none;
+  }
+  .titleHeading{
+	  font-weight:700;
+  }
+  @media only screen and (max-width: 900px) {
+    .text1 {
+      display : none;
+    }
+    .text2{
+        display: none;
+    }
+	.userData{
+		max-width: 100%;
+	}
+    .user1{
+        float: right;
+        position: absolute;
+        right: 35px;
+        top: 15px;
+    }
+    .detailName{
+        padding: 0;
+        margin: 2%;
+    }
+	.detail{
+		display:block;
+	}
+    .hideNo{
+        display: inline-flex;
+    }
+	.data{
+		display:flex;
+	}
+	.titleHeading{
+	  font-weight:700;
+	  width:100%;
+	}
+	li{
+		margin:5%;
+		list-style:none;
+	}
+	.flex-60, .layout-row>.flex-60 {
+		max-width:100%;
+	}
+	.userdetaildesktop{
+		display:none;
+	}
+  }
